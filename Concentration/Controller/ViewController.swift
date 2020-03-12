@@ -10,7 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     var emoji = [Int:String]()
-    lazy var game = Concentration(numberOfPairsOfCards: cardButtons.count / 2)
+    lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+    var numberOfPairsOfCards :Int {
+        return cardButtons.count / 2
+    }
     var flipCount  = 0 {
         didSet {
             flipCountLabel.text = "Flips: \(flipCount)"
